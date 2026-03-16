@@ -1,0 +1,50 @@
+baseURL = "https://yourdomain.com"
+languageCode = "zh-cn"
+title = "刘胜利的博客"
+theme = "PaperMod"
+paginate = 10
+
+[params]
+  env = "production"
+  title = "刘胜利的博客"
+  description = "记录技术、生活与思考"
+  author = "刘胜利"
+  defaultTheme = "auto"
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+  TocOpen = false
+
+[params.homeInfoParams]
+  Title = "Hi, 我是刘胜利 👋"
+  Content = "后端开发 | 记录技术与生活"
+
+[[params.socialIcons]]
+  name = "github"
+  url = "https://github.com/ThReeIOne"
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "文章"
+    url = "/posts/"
+    weight = 10
+  [[menu.main]]
+    identifier = "tags"
+    name = "标签"
+    url = "/tags/"
+    weight = 20
+  [[menu.main]]
+    identifier = "about"
+    name = "关于"
+    url = "/about/"
+    weight = 30
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+    lineNos = true
+    codeFences = true
