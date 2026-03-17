@@ -1,0 +1,99 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card-bg: var(--card-bg);
+  --color-card-border: var(--card-border);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #111111;
+  --card-bg: #ffffff;
+  --card-border: #e5e7eb;
+  --accent: #6366f1;
+  --accent-hover: #4f46e5;
+  --muted: #f3f4f6;
+  --muted-foreground: #6b7280;
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --card-bg: #141414;
+  --card-border: #262626;
+  --accent: #818cf8;
+  --accent-hover: #a5b4fc;
+  --muted: #1a1a1a;
+  --muted-foreground: #a1a1aa;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+/* Gradient cover placeholders */
+.gradient-cover-1 {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+.gradient-cover-2 {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+.gradient-cover-3 {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+.gradient-cover-4 {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+.gradient-cover-5 {
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+.gradient-cover-6 {
+  background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+}
+
+/* Glassmorphism header */
+.header-blur {
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.dark .header-blur {
+  background: rgba(10, 10, 10, 0.8);
+}
+
+/* Code block styling */
+pre > code {
+  display: grid;
+}
+
+pre {
+  overflow-x: auto;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+code [data-line] {
+  padding: 0 1rem;
+}
+
+[data-rehype-pretty-code-figure] pre {
+  border: 1px solid var(--tw-prose-pre-border, #e5e7eb);
+}
+
+.dark [data-rehype-pretty-code-figure] pre {
+  border-color: #374151;
+}

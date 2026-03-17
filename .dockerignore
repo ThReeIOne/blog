@@ -1,0 +1,12 @@
+node_modules
+.next
+.git
+.gitignore
+.idea
+.claude
+*.md
+!content/**/*.md
+Dockerfile
+docker-compose.yml
+.dockerignore
+.env*

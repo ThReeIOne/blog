@@ -1,0 +1,21 @@
+services:
+  blog:
+    build: .
+    ports:
+      - "51820:51820"
+    restart: unless-stopped
+    environment:
+      - NEXT_PUBLIC_TWIKOO_ENV_ID=https://open.liushengli.tech
+
+  twikoo:
+    image: imaegoo/twikoo
+    ports:
+      - "8090:8090"
+    restart: unless-stopped
+    environment:
+      - TWIKOO_PORT=8090
+    volumes:
+      - twikoo_data:/app/data
+
+volumes:
+  twikoo_data:
