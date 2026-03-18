@@ -1,4 +1,5 @@
-export const SITE_NAME = "Shengli's Blog";
-export const SITE_DESCRIPTION = "个人技术博客，记录编程、架构与思考";
-export const SITE_URL = "https://liushengli.tech";
-export const AUTHOR = "Shengli";
+export const SITE_NAME = "Shengli\'s Blog";
+export const SITE_DESCRIPTION =
+  "后端工程师，专注 Go、分布式系统与可观测性。记录构建真实系统的思考与踩坑。";
+export const SITE_URL = "https://www.liushengli.tech";
+export const GITHUB_URL = "https://github.com/ThReeIOne";
