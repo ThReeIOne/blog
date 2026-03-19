@@ -117,6 +117,25 @@ export function MouseEffects() {
       });
     }
 
+    function addTrailPoint(x: number, y: number) {
+      hueRef.current = (hueRef.current + 1.5) % 360;
+      trailRef.current.push({
+        x,
+        y,
+        life: 1,
+        hue: hueRef.current,
+        size: Math.random() * 5 + 3,
+      });
+    }
+
+    function onTouchMove(e: TouchEvent) {
+      Array.from(e.touches).forEach((t) => addTrailPoint(t.clientX, t.clientY));
+    }
+
+    function onTouchStart(e: TouchEvent) {
+      Array.from(e.touches).forEach((t) => spawnFirework(t.clientX, t.clientY));
+    }
+
     function onMouseDown(e: MouseEvent) {
       clickingRef.current = true;
       cursor.style.transform = "translate(-50%, -50%) scale(0.6)";
@@ -131,6 +150,8 @@ export function MouseEffects() {
     window.addEventListener("mousemove", onMouseMove);
     window.addEventListener("mousedown", onMouseDown);
     window.addEventListener("mouseup", onMouseUp);
+    window.addEventListener("touchmove", onTouchMove, { passive: true });
+    window.addEventListener("touchstart", onTouchStart, { passive: true });
 
     function draw() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -155,6 +176,8 @@ export function MouseEffects() {
       window.removeEventListener("mousemove", onMouseMove);
       window.removeEventListener("mousedown", onMouseDown);
       window.removeEventListener("mouseup", onMouseUp);
+      window.removeEventListener("touchmove", onTouchMove);
+      window.removeEventListener("touchstart", onTouchStart);
       cancelAnimationFrame(rafRef.current);
       container.remove();
     };
