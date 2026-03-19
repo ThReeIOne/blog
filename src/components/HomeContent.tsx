@@ -18,7 +18,7 @@ export function HomeContent({ posts }: { posts: PostMeta[] }) {
           Hi, I'm Shengli 👋
         </h1>
         <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-          后端工程师，专注于 Go、分布式系统和可观测性。这里记录我在构建真实系统时的思考与踩坑。
+          后端工程师，专注于分布式系统和可观测性。这里记录我在构建真实系统时的思考与踩坑。
         </p>
         <div className="flex items-center gap-4">
           <a

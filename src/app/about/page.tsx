@@ -38,7 +38,7 @@ export default async function AboutPage() {
           {AUTHOR.charAt(0).toUpperCase()}
         </div>
         <div>
-          <h1 className="text-2xl font-bold">{AUTHOR}</h1>
+          <h1 className="text-2xl font-bold">Shengli</h1>
           <p className="mt-1 text-muted-foreground">
             个人技术博客，记录编程、架构与思考
           </p>
