@@ -25,7 +25,7 @@ export default function TagsPage() {
               <span className="text-lg font-semibold transition-colors group-hover:text-accent">
                 {tag}
               </span>
-              <span className="rounded-full bg-accent/10 px-3 py-1 text-sm font-medium text-accent">
+              <span className="rounded-full border border-card-border bg-muted px-3 py-1 text-sm font-medium text-foreground">
                 {count} 篇
               </span>
             </Link>
