@@ -69,12 +69,17 @@ function spawnFirework(x: number, y: number) {
 
 export function MouseEffects() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const cursorRef = useRef<HTMLDivElement>(null);
   const trailRef = useRef<TrailPoint[]>([]);
   const mouseRef = useRef({ x: -999, y: -999 });
   const hueRef = useRef(200);
   const rafRef = useRef<number>(0);
+  const clickingRef = useRef(false);
 
   useEffect(() => {
+    // Hide default cursor
+    document.body.style.cursor = "none";
+
     // Floating particles container
     const container = document.createElement("div");
     container.style.cssText = "position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;";
@@ -83,6 +88,7 @@ export function MouseEffects() {
 
     // Canvas trail
     const canvas = canvasRef.current!;
+    const cursor = cursorRef.current!;
     const ctx = canvas.getContext("2d")!;
 
     function resize() {
@@ -93,23 +99,38 @@ export function MouseEffects() {
     window.addEventListener("resize", resize);
 
     function onMouseMove(e: MouseEvent) {
-      mouseRef.current = { x: e.clientX, y: e.clientY };
+      const x = e.clientX;
+      const y = e.clientY;
+      mouseRef.current = { x, y };
+
+      // Move custom cursor
+      cursor.style.left = x + "px";
+      cursor.style.top = y + "px";
+
       hueRef.current = (hueRef.current + 1.5) % 360;
       trailRef.current.push({
-        x: e.clientX,
-        y: e.clientY,
+        x,
+        y,
         life: 1,
         hue: hueRef.current,
         size: Math.random() * 4 + 2,
       });
     }
 
-    function onClick(e: MouseEvent) {
+    function onMouseDown(e: MouseEvent) {
+      clickingRef.current = true;
+      cursor.style.transform = "translate(-50%, -50%) scale(0.6)";
       spawnFirework(e.clientX, e.clientY);
     }
 
+    function onMouseUp() {
+      clickingRef.current = false;
+      cursor.style.transform = "translate(-50%, -50%) scale(1)";
+    }
+
     window.addEventListener("mousemove", onMouseMove);
-    window.addEventListener("click", onClick);
+    window.addEventListener("mousedown", onMouseDown);
+    window.addEventListener("mouseup", onMouseUp);
 
     function draw() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -129,23 +150,45 @@ export function MouseEffects() {
     draw();
 
     return () => {
+      document.body.style.cursor = "";
       window.removeEventListener("resize", resize);
       window.removeEventListener("mousemove", onMouseMove);
-      window.removeEventListener("click", onClick);
+      window.removeEventListener("mousedown", onMouseDown);
+      window.removeEventListener("mouseup", onMouseUp);
       cancelAnimationFrame(rafRef.current);
       container.remove();
     };
   }, []);
 
   return (
-    <canvas
-      ref={canvasRef}
-      style={{
-        position: "fixed",
-        inset: 0,
-        pointerEvents: "none",
-        zIndex: 9998,
-      }}
-    />
+    <>
+      {/* Custom cursor circle */}
+      <div
+        ref={cursorRef}
+        style={{
+          position: "fixed",
+          width: "20px",
+          height: "20px",
+          border: "2px solid hsl(200, 90%, 65%)",
+          borderRadius: "50%",
+          pointerEvents: "none",
+          zIndex: 99999,
+          transform: "translate(-50%, -50%) scale(1)",
+          transition: "transform 0.15s ease, border-color 0.3s ease",
+          mixBlendMode: "difference",
+          left: "-100px",
+          top: "-100px",
+        }}
+      />
+      <canvas
+        ref={canvasRef}
+        style={{
+          position: "fixed",
+          inset: 0,
+          pointerEvents: "none",
+          zIndex: 9998,
+        }}
+      />
+    </>
   );
 }
