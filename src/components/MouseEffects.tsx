@@ -3,8 +3,8 @@ import { useEffect, useRef } from "react";
 
 // ── 1. Floating particles (sakura/snow) ──────────────────────────────────────
 function createFloatingParticles(container: HTMLElement) {
-  const count = 25;
-  const emojis = ["✦", "✧", "·", "⋆", "✺", "◦"];
+  const count = 55;
+  const emojis = ["✦", "✧", "⋆", "✺", "❄", "❅", "❆", "·", "◦", "✼"];
 
   for (let i = 0; i < count; i++) {
     const el = document.createElement("span");
@@ -13,13 +13,13 @@ function createFloatingParticles(container: HTMLElement) {
       position: fixed;
       pointer-events: none;
       z-index: 0;
-      font-size: ${Math.random() * 12 + 8}px;
-      color: hsl(${Math.random() * 60 + 200}, 70%, 70%);
+      font-size: ${Math.random() * 18 + 10}px;
+      color: hsl(${Math.random() * 60 + 200}, 80%, 72%);
       left: ${Math.random() * 100}vw;
       top: ${Math.random() * 100}vh;
-      opacity: ${Math.random() * 0.5 + 0.2};
-      animation: floatDrift ${Math.random() * 15 + 12}s linear infinite;
-      animation-delay: -${Math.random() * 15}s;
+      opacity: ${Math.random() * 0.55 + 0.25};
+      animation: floatDrift ${Math.random() * 14 + 10}s linear infinite;
+      animation-delay: -${Math.random() * 14}s;
     `;
     container.appendChild(el);
   }
