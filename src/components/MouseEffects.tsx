@@ -124,12 +124,14 @@ export function MouseEffects() {
         y,
         life: 1,
         hue: hueRef.current,
-        size: Math.random() * 5 + 3,
+        size: Math.random() * 6 + 4,
       });
     }
 
     function onTouchMove(e: TouchEvent) {
-      Array.from(e.touches).forEach((t) => addTrailPoint(t.clientX, t.clientY));
+      Array.from(e.touches).forEach((t) => {
+        addTrailPoint(t.clientX, t.clientY);
+      });
     }
 
     function onTouchStart(e: TouchEvent) {
@@ -150,8 +152,9 @@ export function MouseEffects() {
     window.addEventListener("mousemove", onMouseMove);
     window.addEventListener("mousedown", onMouseDown);
     window.addEventListener("mouseup", onMouseUp);
-    window.addEventListener("touchmove", onTouchMove, { passive: true });
-    window.addEventListener("touchstart", onTouchStart, { passive: true });
+    // Use document for touch to capture events during scroll
+    document.addEventListener("touchmove", onTouchMove, { passive: true });
+    document.addEventListener("touchstart", onTouchStart, { passive: true });
 
     function draw() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -163,8 +166,8 @@ export function MouseEffects() {
         ctx.shadowBlur = 8;
         ctx.shadowColor = `hsl(${p.hue}, 90%, 65%)`;
         ctx.fill();
-        p.life -= 0.04;
-        p.size += 0.1;
+        p.life -= 0.03;
+        p.size += 0.08;
       }
       rafRef.current = requestAnimationFrame(draw);
     }
@@ -178,6 +181,8 @@ export function MouseEffects() {
       window.removeEventListener("mouseup", onMouseUp);
       window.removeEventListener("touchmove", onTouchMove);
       window.removeEventListener("touchstart", onTouchStart);
+      document.removeEventListener("touchmove", onTouchMove);
+      document.removeEventListener("touchstart", onTouchStart);
       cancelAnimationFrame(rafRef.current);
       container.remove();
     };
