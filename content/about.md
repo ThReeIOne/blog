@@ -37,12 +37,3 @@ title: "关于我"
 日常主力是 **Go** 和 **Python（FastAPI）**，数据库用 PostgreSQL 比较多，基础设施这块关注 ClickHouse、Docker、监控可观测性方向。
 
 前端不是主力方向，但需要的时候会写 TypeScript + React，这个博客就是 Next.js 搭的。
-
----
-
-## 联系方式
-
-- **GitHub**：[github.com/ThReeIOne](https://github.com/ThReeIOne)
-- **博客 RSS**：[/feed.xml](/feed.xml)
-
-有问题或者想聊技术，欢迎通过 GitHub Issues 或者博客文章评论联系我。
