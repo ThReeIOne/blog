@@ -17,25 +17,25 @@
 }
 
 :root {
-  --background: #fafaf9;
-  --foreground: #1c1917;
-  --card-bg: #ffffff;
-  --card-border: #e7e5e4;
-  --accent: #0f172a;
-  --accent-hover: #1e293b;
-  --muted: #f5f5f4;
-  --muted-foreground: #78716c;
+  --background: #fef9f0;
+  --foreground: #2d2011;
+  --card-bg: #fffdf7;
+  --card-border: #e8dfc8;
+  --accent: #92400e;
+  --accent-hover: #78350f;
+  --muted: #f5ede0;
+  --muted-foreground: #8a7055;
 }
 
 .dark {
-  --background: #0c0c0c;
-  --foreground: #e8e8e6;
-  --card-bg: #141414;
-  --card-border: #262626;
-  --accent: #e8e8e6;
-  --accent-hover: #ffffff;
-  --muted: #1a1a1a;
-  --muted-foreground: #737373;
+  --background: #0d1117;
+  --foreground: #e6edf3;
+  --card-bg: #161b22;
+  --card-border: #30363d;
+  --accent: #79c0ff;
+  --accent-hover: #a5d6ff;
+  --muted: #1c2128;
+  --muted-foreground: #8b949e;
 }
 
 *, *::before, *::after {
@@ -69,10 +69,10 @@ main {
 .header-blur {
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background: rgba(250, 250, 249, 0.85);
+  background: rgba(254, 249, 240, 0.85);
 }
 .dark .header-blur {
-  background: rgba(12, 12, 12, 0.85);
+  background: rgba(13, 17, 23, 0.85);
 }
 
 /* Animated underline for links */
