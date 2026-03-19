@@ -45,6 +45,9 @@ export function HomeContent({ posts }: { posts: PostMeta[] }) {
         </div>
       </section>
 
+      {/* Divider */}
+      <hr className="border-card-border mb-10" />
+
       {/* Writing */}
       <section>
         <h2 className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-2">

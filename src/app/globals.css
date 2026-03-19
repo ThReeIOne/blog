@@ -98,7 +98,16 @@ pre {
   font-size: 0.875rem;
   line-height: 1.7;
   border: 1px solid var(--card-border);
-  background: var(--muted) !important;
+  background: #1e1e2e !important;
+  color: #cdd6f4 !important;
+}
+
+pre code {
+  background: transparent !important;
+  border: none !important;
+  color: inherit !important;
+  font-size: inherit !important;
+  padding: 0 !important;
 }
 
 code:not(pre code) {
@@ -107,6 +116,7 @@ code:not(pre code) {
   border-radius: 0.3em;
   background: var(--muted);
   border: 1px solid var(--card-border);
+  color: var(--foreground);
 }
 
 /* Typography */
