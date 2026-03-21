@@ -1,7 +1,7 @@
 ---
 title: "用 PostgreSQL 实现可靠消息队列：SKIP LOCKED 与 at-least-once 投递语义"
 date: "2026-03-16"
-tags: ["PostgreSQL", "消息队列", "Go", "分布式系统", "可靠性"]
+tags: ["数据库", "Go"]
 summary: "深入剖析 PostgreSQL SKIP LOCKED 的工作原理，以及如何在不引入 Kafka/RabbitMQ 的情况下实现生产级的可靠消息投递。"
 ---
 

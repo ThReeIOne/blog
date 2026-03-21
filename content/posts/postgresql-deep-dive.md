@@ -1,7 +1,7 @@
 ---
 title: "PostgreSQL 深度解析：不只是「更好的 MySQL」"
 date: "2026-03-20"
-tags: ["PostgreSQL", "MySQL", "数据库", "后端开发"]
+tags: ["数据库"]
 summary: "PostgreSQL 和 MySQL 都叫关系型数据库，但设计哲学截然不同。这篇文章从架构、数据类型、事务、索引到扩展性，系统拆解 PostgreSQL 的核心机制，并在关键处与 MySQL 做对比——让你真正理解该用哪个，以及为什么。"
 ---
 

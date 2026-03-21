@@ -1,7 +1,7 @@
 ---
 title: "从零实现分布式链路追踪系统 Prism：ClickHouse、自适应采样与 Context 传播"
 date: "2026-03-17"
-tags: ["Go", "分布式系统", "链路追踪", "ClickHouse", "可观测性"]
+tags: ["可观测性", "Go"]
 summary: "深入剖析 Prism 的设计：为什么选 ClickHouse 而不是 Elasticsearch，自适应采样如何在成本和覆盖率之间取得平衡，以及 Context 传播的实现细节。"
 ---
 

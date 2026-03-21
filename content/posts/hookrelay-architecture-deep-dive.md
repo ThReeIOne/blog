@@ -1,7 +1,7 @@
 ---
 title: "设计一个生产级 Webhook 网关：HookRelay 架构复盘"
 date: "2026-03-18"
-tags: ["Go", "架构设计", "Webhook", "PostgreSQL", "可靠性"]
+tags: ["Go", "架构"]
 summary: "从零设计一个支持多源接入、签名验证、可靠投递和扇出路由的 Webhook 网关，深入分析每个设计决策背后的取舍。"
 ---
 
