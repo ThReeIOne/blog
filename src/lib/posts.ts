@@ -41,7 +41,7 @@ export function getAllPostMetas(): PostMeta[] {
     return {
       slug,
       title: data.title ?? slug,
-      date: data.date ?? "1970-01-01",
+      ...(data.date ? { date: data.date } : {}),
       summary: data.summary ?? "",
       tags: data.tags ?? [],
       cover: data.cover ?? undefined,
@@ -50,7 +50,8 @@ export function getAllPostMetas(): PostMeta[] {
   });
 
   return posts.sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    (a, b) =>
+      new Date(b.date ?? 0).getTime() - new Date(a.date ?? 0).getTime()
   );
 }
 
@@ -73,7 +74,7 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
   return {
     slug,
     title: data.title ?? slug,
-    date: data.date ?? "1970-01-01",
+    ...(data.date ? { date: data.date } : {}),
     summary: data.summary ?? "",
     tags: data.tags ?? [],
     cover: data.cover ?? undefined,

@@ -28,7 +28,7 @@ export async function generateMetadata({
       title: post.title,
       description: post.summary,
       type: "article",
-      publishedTime: post.date,
+      ...(post.date ? { publishedTime: post.date } : {}),
       ...(post.cover ? { images: [{ url: post.cover }] } : {}),
     },
   };
@@ -57,7 +57,7 @@ export default async function PostPage({ params }: { params: Params }) {
 
       <header className="mb-8">
         <div className="flex items-center gap-3 text-sm text-muted-foreground">
-          <time>{post.date}</time>
+          {post.date && <time>{post.date}</time>}
           <span className="inline-flex items-center gap-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"

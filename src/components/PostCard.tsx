@@ -14,7 +14,7 @@ export function PostCard({
     <article className={`group ${featured ? "mb-12" : ""}`}>
       <Link href={`/posts/${post.slug}`} className="block space-y-2 py-5 border-b border-card-border hover:border-foreground/20 transition-colors duration-200">
         <div className="flex items-center gap-3 text-sm text-muted-foreground">
-          <time>{post.date}</time>
+          {post.date && <time>{post.date}</time>}
           {featured && (
             <span className="inline-flex items-center rounded-full bg-muted px-2 py-0.5 text-xs font-medium">
               精选
