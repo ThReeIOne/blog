@@ -1,6 +1,5 @@
 ---
 title: "并发模型全景图（二）：FastAPI 的 async/await 怎么用才对"
-date: "2026-03-20"
 tags: ["Python", "架构"]
 summary: "FastAPI 支持同步和异步两种写法，但很多人不知道什么时候该用哪种，以及混用会有什么后果。这篇文章拆解 FastAPI 的并发模型，讲清楚 async def 和 def 的区别、数据库操作怎么处理、CPU 密集型任务怎么办，以及常见的几个坑。"
 ---

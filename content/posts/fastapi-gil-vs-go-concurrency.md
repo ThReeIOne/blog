@@ -1,6 +1,5 @@
 ---
 title: "FastAPI 事件循环、Python GIL 与 Go 协程：并发模型深度对比"
-date: "2026-03-23"
 tags: ["Python", "Go", "架构", "并发"]
 summary: "为什么有 GIL 的 Python 能跑出高并发？asyncio 事件循环底层是怎么工作的？Go 的 goroutine 和 GMP 调度器凭什么比线程快那么多？这篇文章把这几件事从操作系统层面讲清楚，最后做一次正面对比。"
 ---

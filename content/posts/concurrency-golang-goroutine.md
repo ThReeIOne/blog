@@ -1,6 +1,5 @@
 ---
 title: "并发模型全景图（三）：Go 的 goroutine 凭什么这么轻"
-date: "2026-03-20"
 tags: ["Go", "架构"]
 summary: "Go 的并发之所以好用，不只是因为 goroutine 轻量，更因为 Go 运行时实现了一套 M:N 调度器，让协程能真正利用多核。这篇文章拆解 goroutine 的底层原理、GMP 调度模型、channel 的设计哲学，以及 Go 里常见的并发陷阱。"
 ---

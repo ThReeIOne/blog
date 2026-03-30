@@ -1,6 +1,5 @@
 ---
 title: "SQLAlchemy 连接池：那些年我们配错的参数"
-date: "2026-03-27"
 tags: ["数据库", "Python", "SQLAlchemy", "PostgreSQL"]
 summary: "pool_size 设大一点就没问题了吧？错。连接池的参数配错不会立刻爆炸，但会在某个流量高峰的下午，用一个莫名其妙的报错来找你算账。这篇文章把 SQLAlchemy 连接池的核心参数讲清楚，顺带复盘三种常见事故场景。"
 ---

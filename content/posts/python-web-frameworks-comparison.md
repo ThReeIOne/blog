@@ -1,6 +1,5 @@
 ---
 title: "Python Web 框架横向对比：Django、Flask、FastAPI、Starlette、Sanic、Tornado"
-date: "2026-03-26"
 tags: ["Python", "后端", "框架", "架构"]
 summary: "从设计哲学、性能模型、适用场景六个维度，系统对比 Python 主流 Web 框架：Django、Flask、FastAPI、Starlette、Sanic、Tornado。不是教你用哪个，是帮你搞清楚该用哪个。"
 ---
