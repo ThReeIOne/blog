@@ -22,7 +22,7 @@ export function GET() {
       <link>${SITE_URL}/posts/${post.slug}</link>
       <guid isPermaLink="true">${SITE_URL}/posts/${post.slug}</guid>
       <description>${escapeXml(post.summary)}</description>
-      <pubDate>${new Date(post.date).toUTCString()}</pubDate>
+      <pubDate>${new Date(post.date ?? Date.now()).toUTCString()}</pubDate>
     </item>`
     )
     .join("\n");
